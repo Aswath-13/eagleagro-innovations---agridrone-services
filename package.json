@@ -1,5 +1,5 @@
 {
-  "name": "eagleagro-innovations-—-agridrone-services",
+  "name": "eagleagro-innovations---agridrone-services",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,21 +11,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^11.3.12",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
     "file-saver": "^2.0.5",
-    "framer-motion": "^11.3.12",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "xlsx": "^0.18.5"
-  },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
     "gh-pages": "^6.1.1",
     "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "xlsx": "^0.18.5"
   }
 }
