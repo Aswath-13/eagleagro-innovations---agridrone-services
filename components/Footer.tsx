@@ -69,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({ theme, onNavigate }) => {
   return (
     <>
       <footer 
-        className={`border-t ${currentTheme.border} py-12 bg-cover bg-center relative`}
+        className={`border-t ${currentTheme.border} py-8 bg-cover bg-center relative`}
         style={{ backgroundImage: `url('${assetUrl('/images/home/footer-background.jpg')}')` }}
       >
         <div className={`absolute inset-0 ${currentTheme.bg} opacity-90`}></div>
@@ -100,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ theme, onNavigate }) => {
                   </div>
               ))}
           </div>
-          <div className={`mt-10 pt-8 border-t ${currentTheme.border} text-center flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 ${currentTheme.text}`}>
+          <div className={`mt-8 pt-6 border-t ${currentTheme.border} text-center flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 ${currentTheme.text}`}>
               <div className="text-sm sm:text-left">
                 <p>&copy; 2025 Eagle Agro Drone Innovations Pvt Ltd. All rights reserved.</p>
                 <p className="mt-1">
