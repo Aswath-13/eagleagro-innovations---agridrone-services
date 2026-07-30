@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView as useFramerInView } from 'framer-motion';
 import type { Page } from '../App';
+import { assetUrl } from './assetUrl';
 
 // --- Reusable Hooks ---
 
@@ -116,7 +117,7 @@ const VideoTestimonial: React.FC = () => {
         <div 
             ref={containerRef} 
             className="relative aspect-video max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden bg-cover bg-center bg-gray-800"
-            style={{ backgroundImage: "url('/images/home/video-testimonial-bg.jpg')" }}
+            style={{ backgroundImage: `url('${assetUrl('/images/home/video-testimonial-bg.jpg')}')` }}
         >
             {isPlaying && <iframe ref={iframeRef} src={videoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>}
             <button
@@ -155,13 +156,45 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
   const statsInView = useFramerInView(statsRef, { once: true, amount: 0.5 });
   const { scrollYProgress } = useScroll();
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const heroImages = [
+    assetUrl('/images/gallery/agri drone flying.png'),
+    assetUrl('/images/gallery/agri drone.png'),
+    assetUrl('/images/gallery/drone flying on government scheme.png'),
+    assetUrl('/images/gallery/explaining agri drone.png'),
+    assetUrl('/images/gallery/group pic with students.png'),
+    assetUrl('/images/gallery/training student.png'),
+  ];
+  const [activeHeroImage, setActiveHeroImage] = useState(0);
+
+  useEffect(() => {
+    heroImages.forEach((src) => {
+      const image = new Image();
+      image.src = src;
+    });
+
+    const interval = window.setInterval(() => {
+      setActiveHeroImage((current) => (current + 1) % heroImages.length);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, [heroImages.length]);
 
   return (
     <>
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center text-white overflow-hidden">
         <motion.div className="absolute inset-0 h-[150%] -top-[50%]" style={{ y: parallaxY }}>
-            <img src="/images/home/hero-background.jpg" alt="A drone flying over a lush green agricultural field" className="w-full h-full object-cover" loading="eager" />
+          {heroImages.map((src, index) => (
+            <img
+              key={src}
+              src={src}
+              alt="Eagle Agro drone service gallery"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                index === activeHeroImage ? 'opacity-100' : 'opacity-0'
+              }`}
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          ))}
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 z-10" />
         <div className="container mx-auto px-4 sm:px-6 text-center z-20">
@@ -235,7 +268,7 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
               </div>
               <div className="flex justify-center">
                 <motion.img
-                  src="/images/logo.jpg"
+                  src={assetUrl('/images/logo.jpg')}
                   alt="Eagle Agro Innovations Logo"
                   className="max-w-xs w-full rounded-lg shadow-2xl"
                   loading="lazy"
@@ -257,9 +290,9 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
               <p className="mt-4 text-base md:text-lg text-light-text-secondary max-w-3xl mx-auto">Driving progress with precision data from the sky.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <ServicePreviewCard img="/images/services/service-surveys.jpg" title="Aerial Surveys" alt="Drone flying over a vast green field for an aerial survey" onNavigate={() => onNavigate('Services')} />
-              <ServicePreviewCard img="/images/services/service-inspections.jpg" title="Infrastructure Inspections" alt="Drone inspecting a large wind turbine for maintenance" onNavigate={() => onNavigate('Services')} />
-              <ServicePreviewCard img="/images/services/grid-overlay.jpg" title="Precision Mapping" alt="Top-down view of a digital map with grid lines over a landscape" onNavigate={() => onNavigate('Services')} />
+              <ServicePreviewCard img={assetUrl('/images/services/service-surveys.jpg')} title="Aerial Surveys" alt="Drone flying over a vast green field for an aerial survey" onNavigate={() => onNavigate('Services')} />
+              <ServicePreviewCard img={assetUrl('/images/services/service-inspections.jpg')} title="Infrastructure Inspections" alt="Drone inspecting a large wind turbine for maintenance" onNavigate={() => onNavigate('Services')} />
+              <ServicePreviewCard img={assetUrl('/images/services/grid-overlay.jpg')} title="Precision Mapping" alt="Top-down view of a digital map with grid lines over a landscape" onNavigate={() => onNavigate('Services')} />
             </div>
           </AnimatedSection>
         </div>
@@ -285,7 +318,7 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="flex justify-center md:order-last">
                 <div className="relative w-48 h-48 mx-auto overflow-hidden rounded-full shadow-lg ring-4 ring-accent-green/30">
-                  <img src="/images/about/neyan.png" alt="A. Neyan, Founder & Director" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={assetUrl('/images/about/neyan.png')} alt="A. Neyan, Founder & Director" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
               <div className="text-center md:text-left md:order-first">
@@ -315,8 +348,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
               <p className="mt-4 text-base md:text-lg text-light-text-secondary max-w-3xl mx-auto">Explore our success stories and see the tangible impact of our work.</p>
             </div>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <ServicePreviewCard img="/images/case-studies/1.png" title="Boosting Crop Yield by 20%" alt="Lush green crops in a field, signifying high yield" onNavigate={() => onNavigate('Case Studies')} />
-                <ServicePreviewCard img="/images/case-studies/2.png" title="Saving 150+ Hours in Construction" alt="A busy construction site with cranes and workers" onNavigate={() => onNavigate('Case Studies')} />
+                <ServicePreviewCard img={assetUrl('/images/case-studies/1.png')} title="Boosting Crop Yield by 20%" alt="Lush green crops in a field, signifying high yield" onNavigate={() => onNavigate('Case Studies')} />
+                <ServicePreviewCard img={assetUrl('/images/case-studies/2.png')} title="Saving 150+ Hours in Construction" alt="A busy construction site with cranes and workers" onNavigate={() => onNavigate('Case Studies')} />
           </div>
           </AnimatedSection>
          </div>

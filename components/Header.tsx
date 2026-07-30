@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import type { Page } from '../App';
+import { assetUrl } from './assetUrl';
 
 interface HeaderProps {
   currentPage: Page;
@@ -77,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, theme }) => {
             className="flex items-center space-x-3"
           >
             <img
-              src="/images/logo.jpg"
+              src={assetUrl('/images/logo.jpg')}
               alt="Eagle Agro Innovations Logo"
               className="h-12 w-auto rounded-md"
             />

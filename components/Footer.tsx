@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Page } from '../App';
+import { assetUrl } from './assetUrl';
 
 const TwitterIcon: React.FC = () => (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 fill-current"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
@@ -69,14 +70,14 @@ const Footer: React.FC<FooterProps> = ({ theme, onNavigate }) => {
     <>
       <footer 
         className={`border-t ${currentTheme.border} py-12 bg-cover bg-center relative`}
-        style={{ backgroundImage: `url('/images/home/footer-background.jpg')` }}
+        style={{ backgroundImage: `url('${assetUrl('/images/home/footer-background.jpg')}')` }}
       >
         <div className={`absolute inset-0 ${currentTheme.bg} opacity-90`}></div>
         <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
               <div className="col-span-1">
                   <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('Home'); }} className="inline-block mb-4">
-                    <img src="/images/logo.jpg" alt="Eagle Agro Innovations Logo" className="h-12 w-auto mx-auto md:mx-0 rounded-md" />
+                    <img src={assetUrl('/images/logo.jpg')} alt="Eagle Agro Innovations Logo" className="h-12 w-auto mx-auto md:mx-0 rounded-md" />
                   </a>
                   <p className={`mt-2 ${currentTheme.text} text-sm`}>Your partner in precision drone services, helping visions take flight.</p>
                   <div className={`mt-4 text-sm ${currentTheme.text}`}>

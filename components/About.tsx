@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import type { Page } from '../App';
+import { assetUrl } from './assetUrl';
 
 const CheckmarkIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className={className}>
@@ -21,14 +22,14 @@ const teamMembers: {
   {
     name: 'A. Neyan',
     role: 'Founder & Director',
-    imageUrl: '/images/about/neyan.png',
+    imageUrl: assetUrl('/images/about/neyan.png'),
     department: 'Leadership',
     description: 'Visionary leader driving drone innovation in agriculture and infrastructure.',
   },
   {
     name: 'Hariharan S',
     role: 'Co-Founder & Managing Director',
-    imageUrl: '/images/about/hari.png',
+    imageUrl: assetUrl('/images/about/hari.png'),
     department: 'Leadership',
     description: 'Expert strategist ensuring operational excellence and sustainable growth.',
   },
@@ -102,7 +103,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <img 
-                src="/images/about/team-collaboration.jpg" 
+                src={assetUrl('/images/about/team-collaboration.jpg')} 
                 alt="Eagle Agro Team of engineers collaborating over a drone" 
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
                 loading="lazy"

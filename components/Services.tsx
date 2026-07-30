@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import type { Page } from '../App';
+import { assetUrl } from './assetUrl';
 
 interface ServicesProps {
   onNavigate: (page: Page) => void;
@@ -78,7 +79,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
         'Crop Health Monitoring (NDVI)',
         'Land Use & Environmental Assessment',
       ],
-      imageUrl: '/images/services/service-surveys.jpg', // ✅ your actual file
+      imageUrl: assetUrl('/images/services/service-surveys.jpg'), // ✅ your actual file
       imageAlt: 'Wide aerial view of farmland for survey',
     },
     {
@@ -91,7 +92,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
         'Corrosion & Structural Integrity Checks',
         'Reduced Downtime & Increased Safety',
       ],
-      imageUrl: '/images/services/service-inspections.jpg', // ✅ your actual file
+      imageUrl: assetUrl('/images/services/service-inspections.jpg'), // ✅ your actual file
       imageAlt: 'Drone inspecting a large bridge',
       reverse: true,
     },
@@ -105,7 +106,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
         'As-Built vs. Design Analysis',
         'High-Fidelity 3D Reality Capture',
       ],
-      imageUrl: '/images/services/grid-overlay.jpg', // ✅ your actual file
+      imageUrl: assetUrl('/images/services/grid-overlay.jpg'), // ✅ your actual file
       imageAlt: 'Satellite-style mapping with a grid overlay',
     },
   ];

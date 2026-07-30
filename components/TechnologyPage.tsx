@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, MotionProps } from 'framer-motion';
+import { assetUrl } from './assetUrl';
 
 // Define a more specific type for theme classes
 type ThemeStyle = {
@@ -157,13 +158,13 @@ const TechnologyPage: React.FC<TechnologyPageProps> = ({ theme }) => {
           <motion.div {...fadeInOnScroll}><DataVisualizationCard
               title="Thermal Inspection Overlay"
               description="Our thermal sensors detect anomalies invisible to the naked eye. We overlay this data on high-resolution images to pinpoint issues in solar farms, power lines, and building envelopes."
-              imageUrl="/images/technology/thermal-inspection.jpeg"
+              imageUrl={assetUrl('/images/technology/thermal-inspection.jpeg')}
               themeClasses={currentTheme}
             /></motion.div>
           <motion.div {...fadeInOnScroll}><DataVisualizationCard
               title="3D Site Model & Volumetrics"
               description="We create accurate 3D digital twins of construction sites and quarries. This allows for precise volumetric calculations, progress tracking, and as-built verification."
-              imageUrl="/images/technology/3d-model.jpeg"
+              imageUrl={assetUrl('/images/technology/3d-model.jpeg')}
               themeClasses={currentTheme}
             /></motion.div>
         </div>

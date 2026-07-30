@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { assetUrl } from './components/assetUrl';
 
 // ✅ Lazy imports for smoother, faster navigation (no visual "loading" delay)
 const pageImports = {
@@ -71,7 +72,7 @@ const App: React.FC = () => {
 
       imagesToPreload.forEach((src) => {
         const img = new Image();
-        img.src = src;
+        img.src = assetUrl(src);
       });
     };
     // Run preloading after a short delay to not interfere with initial page render

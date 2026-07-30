@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { assetUrl } from './assetUrl';
 
 const CaseStudyCard: React.FC<{
   category: string;
@@ -29,13 +30,13 @@ const CaseStudiesPage: React.FC = () => {
       category: 'Agriculture',
       title: 'Boosting Crop Yield by 20% with Multispectral Analysis',
       description: 'Partnered with a large-scale farm to identify crop stress and optimize irrigation, leading to a significant increase in yield and reduction in water usage.',
-      imageUrl: '/images/case-studies/1.png',
+      imageUrl: assetUrl('/images/case-studies/1.png'),
     },
     {
       category: 'Construction',
       title: 'Saving 150+ Hours on a Major Construction Site Survey',
       description: 'Provided weekly aerial surveys for a commercial development project, enabling project managers to track progress accurately and resolve logistical issues proactively.',
-      imageUrl: '/images/case-studies/2.png',
+      imageUrl: assetUrl('/images/case-studies/2.png'),
     },
   ];
 

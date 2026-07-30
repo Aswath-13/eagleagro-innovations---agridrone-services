@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { assetUrl } from './assetUrl';
 import type { Page } from '../App';
 
 interface GalleryProps {
@@ -32,24 +33,24 @@ const MagnifyingGlassIcon: React.FC<{ className?: string }> = ({ className = "w-
 );
 
 const allImages = [
-  { src: '/images/gallery/agri drone flying.png', alt: 'Agricultural drone flying in field', title: 'Aerial Spraying in Action' },
-  { src: '/images/gallery/agri drone parts explain.png', alt: 'Explaining agricultural drone parts', title: 'Technical Walkthrough' },
-  { src: '/images/gallery/agri drone.png', alt: 'Agricultural drone on ground', title: 'Our Flagship Drone' },
-  { src: '/images/gallery/college event  speaker.png', alt: 'Speaker at college event', title: 'Inspiring Future Innovators' },
-  { src: '/images/gallery/college event.png', alt: 'Drone presentation at college event', title: 'University Outreach' },
-  { src: '/images/gallery/drone flying on government scheme.png', alt: 'Drone flying under government scheme', title: 'Government Scheme Demo' },
-  { src: '/images/gallery/event.png', alt: 'Event showcasing drones', title: 'Industry Expo' },
-  { src: '/images/gallery/explaining agri drone.png', alt: 'Instructor explaining drone to students', title: 'Hands-On Drone Training' },
-  { src: '/images/gallery/group pic with students.png', alt: 'Group photo with students', title: 'Student Workshop' },
-  { src: '/images/gallery/in colllege.jpg', alt: 'Drone demonstration inside college', title: 'Campus Demonstration' },
-  { src: '/images/gallery/lecture on drones.jpg', alt: 'Lecture session on drones', title: 'Knowledge Sharing Session' },
-  { src: '/images/gallery/on event inaugraton.jpg', alt: 'Event inauguration', title: 'Event Inauguration' },
-  { src: '/images/gallery/other.png', alt: 'Miscellaneous drone activity', title: 'Field Operations' },
-  { src: '/images/gallery/other 1.png', alt: 'Miscellaneous image 1', title: 'Drone Operations' },
-  { src: '/images/gallery/speaking in another college.png', alt: 'Speaker in another college event', title: 'Guest Lecture' },
-  { src: '/images/gallery/teaching girls to operate remote.png', alt: 'Teaching students drone remote control', title: 'Remote Control Training' },
-  { src: '/images/gallery/teaching students.png', alt: 'Drone training for students', title: 'Engaging with Students' },
-  { src: '/images/gallery/training student.png', alt: 'Drone training session', title: 'Practical Training Session' },
+  { src: assetUrl('/images/gallery/agri drone flying.png'), alt: 'Agricultural drone flying in field', title: 'Aerial Spraying in Action' },
+  { src: assetUrl('/images/gallery/agri drone parts explain.png'), alt: 'Explaining agricultural drone parts', title: 'Technical Walkthrough' },
+  { src: assetUrl('/images/gallery/agri drone.png'), alt: 'Agricultural drone on ground', title: 'Our Flagship Drone' },
+  { src: assetUrl('/images/gallery/college event  speaker.png'), alt: 'Speaker at college event', title: 'Inspiring Future Innovators' },
+  { src: assetUrl('/images/gallery/college event.png'), alt: 'Drone presentation at college event', title: 'University Outreach' },
+  { src: assetUrl('/images/gallery/drone flying on government scheme.png'), alt: 'Drone flying under government scheme', title: 'Government Scheme Demo' },
+  { src: assetUrl('/images/gallery/event.png'), alt: 'Event showcasing drones', title: 'Industry Expo' },
+  { src: assetUrl('/images/gallery/explaining agri drone.png'), alt: 'Instructor explaining drone to students', title: 'Hands-On Drone Training' },
+  { src: assetUrl('/images/gallery/group pic with students.png'), alt: 'Group photo with students', title: 'Student Workshop' },
+  { src: assetUrl('/images/gallery/in colllege.jpg'), alt: 'Drone demonstration inside college', title: 'Campus Demonstration' },
+  { src: assetUrl('/images/gallery/lecture on drones.jpg'), alt: 'Lecture session on drones', title: 'Knowledge Sharing Session' },
+  { src: assetUrl('/images/gallery/on event inaugraton.jpg'), alt: 'Event inauguration', title: 'Event Inauguration' },
+  { src: assetUrl('/images/gallery/other.png'), alt: 'Miscellaneous drone activity', title: 'Field Operations' },
+  { src: assetUrl('/images/gallery/other 1.png'), alt: 'Miscellaneous image 1', title: 'Drone Operations' },
+  { src: assetUrl('/images/gallery/speaking in another college.png'), alt: 'Speaker in another college event', title: 'Guest Lecture' },
+  { src: assetUrl('/images/gallery/teaching girls to operate remote.png'), alt: 'Teaching students drone remote control', title: 'Remote Control Training' },
+  { src: assetUrl('/images/gallery/teaching students.png'), alt: 'Drone training for students', title: 'Engaging with Students' },
+  { src: assetUrl('/images/gallery/training student.png'), alt: 'Drone training session', title: 'Practical Training Session' },
 ];
 
 const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
