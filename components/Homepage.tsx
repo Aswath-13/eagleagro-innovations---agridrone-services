@@ -210,7 +210,7 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
             initial="hidden"
             animate="visible"
           >
-            {"Precision Aerial Intelligence".split(" ").map((word, index) => (
+            {"Drone Services for Smarter Farming".split(" ").map((word, index) => (
               <motion.span
                 key={index}
                 className="inline-block"
@@ -226,7 +226,7 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            Eagle Agro delivers unparalleled drone services for agriculture, infrastructure, and surveying. We turn aerial data into actionable insights.
+            Eagle Agro helps farmers and project teams cover land faster with drone spraying, mapping, surveys, and field inspections.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:space-x-4"
