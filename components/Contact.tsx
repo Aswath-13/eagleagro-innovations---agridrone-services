@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="pt-24 pb-16 md:pt-44 md:pb-24 bg-green-50/50">
+    <section id="contact" className="pt-28 pb-24 md:pt-[361px] md:pb-[253px] bg-green-50/50">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
