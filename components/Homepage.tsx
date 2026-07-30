@@ -258,12 +258,12 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
           <AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="text-center md:text-left">
-                <span className="text-accent-green font-semibold">THE EAGLE AGRO ADVANTAGE</span>
+                <span className="text-accent-green font-semibold">ABOUT EAGLE AGRO</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-light-text mt-2 mb-4">
-                  Pioneering Aerial Solutions
+                  Drone Work That Helps on the Ground
                 </h2>
                 <p className="text-base md:text-lg text-light-text-secondary">
-                  Eagle Agro was founded on the principle that advanced technology can solve real-world problems. We specialize in deploying state-of-the-art drone technology to provide critical data and operational support to industries vital to our economy and environment.
+                  We work with farmers, land owners, builders, and local teams who need faster spraying, clear field views, and reliable survey support. Our focus is simple: reach the site, fly safely, and give useful results without wasting time.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -286,8 +286,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
         <div className="container mx-auto px-4 sm:px-6">
           <AnimatedSection>
             <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-light-text">Core Services</h2>
-              <p className="mt-4 text-base md:text-lg text-light-text-secondary max-w-3xl mx-auto">Driving progress with precision data from the sky.</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-light-text">What We Do</h2>
+              <p className="mt-4 text-base md:text-lg text-light-text-secondary max-w-3xl mx-auto">Drone spraying, land surveys, mapping, and inspections for farms and project sites.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <ServicePreviewCard img={assetUrl('/images/services/service-surveys.jpg')} title="Aerial Surveys" alt="Drone flying over a vast green field for an aerial survey" onNavigate={() => onNavigate('Services')} />

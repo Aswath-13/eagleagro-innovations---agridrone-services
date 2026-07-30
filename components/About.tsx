@@ -81,9 +81,9 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <span className="text-accent-green font-semibold">ABOUT US</span>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-light-text mt-2 mb-4">Pioneering Aerial Solutions for a Better Future</h1>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-light-text mt-2 mb-4">Practical Drone Support for Field Work</h1>
               <p className="text-base md:text-lg text-light-text-secondary mb-6">
-                Eagle Agro was founded on the principle that advanced technology can solve real-world problems. We specialize in deploying state-of-the-art drone technology to provide critical data and operational support to industries vital to our economy and environment.
+                Eagle Agro helps farmers and project teams get work done faster with drone spraying, mapping, surveys, and inspections. We keep the process straightforward from site visit to final output.
               </p>
               <div className="space-y-4">
                   <div className="flex items-start">
