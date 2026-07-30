@@ -199,7 +199,7 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 z-10" />
         <div className="container mx-auto px-4 sm:px-6 text-center z-20">
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4"
+            className="text-4xl sm:text-5xl md:text-[65px] font-extrabold tracking-tight leading-tight mb-4"
             variants={{
               hidden: { opacity: 0 },
               visible: {
