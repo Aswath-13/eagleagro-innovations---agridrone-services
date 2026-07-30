@@ -347,7 +347,7 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate }) => {
               <h2 className="text-3xl md:text-4xl font-extrabold text-light-text">Proven Results</h2>
               <p className="mt-4 text-base md:text-lg text-light-text-secondary max-w-3xl mx-auto">Explore our success stories and see the tangible impact of our work.</p>
             </div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <ServicePreviewCard img={assetUrl('/images/case-studies/1.png')} title="Boosting Crop Yield by 20%" alt="Lush green crops in a field, signifying high yield" onNavigate={() => onNavigate('Case Studies')} />
                 <ServicePreviewCard img={assetUrl('/images/case-studies/2.png')} title="Saving 150+ Hours in Construction" alt="A busy construction site with cranes and workers" onNavigate={() => onNavigate('Case Studies')} />
           </div>
